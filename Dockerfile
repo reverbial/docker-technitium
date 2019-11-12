@@ -2,8 +2,6 @@ FROM debian:10
 EXPOSE 5380/tcp
 EXPOSE 53/udp
 VOLUME /opt/dns/config
-ENV http_proxy=http://proxy.au.ext.ray.com:80 
-ENV https_proxy=http://proxy.au.ext.ray.com:80
 RUN apt update && apt install -y gnupg wget curl apt-transport-https
 RUN curl -fsSL -q https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
     && wget -q https://packages.microsoft.com/config/debian/10/prod.list \
